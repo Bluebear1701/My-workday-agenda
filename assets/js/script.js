@@ -1,18 +1,20 @@
-//make textarea persistent using local.storage
-//add time to jumbotron
-//add color to textarea
-//give textarea color
-//make textarea change color as due dates get closer
-//make able to change text area and keep current changes
-//add save button and icon
-//make save button move in and out when cursor is over it to save
-var tasks = {};
-
+// the current date
 var today = moment().format('ddd MM/DD/YYYY');
 $("#currentDay").html(today);
 
-//if current time <>= time block then add a class past prestent or future 
+//save button click listener
+$(".saveBtn") .on(".click", function(){
+    text = $(this).setItem(text).val()  
+   
+    //local.storage 
+    localStorage.setItem("text", "time")
+});
 
+
+
+
+
+//if current time <>= time block then add a class past, present or future 
   function updateColor () {
 var time = moment().hours 
 $(".time-block").each(function() {
@@ -26,4 +28,9 @@ $(".time-block").each(function() {
     };
 });
   };
-  
+ 
+
+//get current time  
+//loop over time blocks
+//check the time and add the class
+//get from local storage 
