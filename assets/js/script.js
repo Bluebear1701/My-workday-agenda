@@ -3,12 +3,15 @@ var today = moment().format('ddd MM/DD/YYYY');
 $("#currentDay").html(today);
 
 //save button click listener
-$(".saveBtn") .on(".click", function(){
-    text = $(this).setItem(text).val()  
-   
+$(".saveBtn") .on("click", function(){
+ var description=$(this).siblings(".description").val()  
+ var time=$(this).parent().attr("id")  
     //local.storage 
-    localStorage.setItem("text", "time")
+    localStorage.setItem(time, description)
+    
 });
+
+$("#9 .description").val(localStorage.getItem("9"));
 
 
 
@@ -16,7 +19,7 @@ $(".saveBtn") .on(".click", function(){
 
 //if current time <>= time block then add a class past, present or future 
   function updateColor () {
-var time = moment().hours 
+var time = moment().hours() 
 $(".time-block").each(function() {
     var timeColor = $(this).attr("id")
     if (timeColor < time) {
@@ -28,7 +31,8 @@ $(".time-block").each(function() {
     };
 });
   };
- 
+ updateColor();
+
 
 //get current time  
 //loop over time blocks
