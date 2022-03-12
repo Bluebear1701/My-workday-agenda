@@ -25,19 +25,24 @@ $("#17 .description").val(localStorage.getItem("17"));
 
 
 //if current time <>= time block then add a class past, present or future 
-  function updateColor () {
-var time = moment().hours() 
-$(".time-block").each(function() {
-    var timeColor = $(this).attr("id")
-    if (timeColor < time) {
-        $(this).addClass(".past")        
-    } else if (timeColor === time) {
-        $(this).addClass(".present")
-    } else if (timeColor > time) {
-        $(this).addClass(".future")
-    };
-});
-  };
- updateColor();
+function updateColor () {
+    var time = moment().hours() 
+    console.log(time)
+    $(".time-block").each(function() {
+        var timeColor = $(this).attr("id")
+        console.log(timeColor)
+        if (timeColor < time) {
+            $(this).addClass("past")        
+        } else if (timeColor === time) {
+            $(this).removeClass("past")
+            $(this).addClass("present")
+        } else if (timeColor > time) {
+            $(this).removeClass("past")
+            $(this).removeClass("present")
+            $(this).addClass("future")
+        };
+    });
+};
+updateColor();
 
 
