@@ -8,7 +8,8 @@ So that, I could get more work accomplished during the day.
 As developer I plan to make up grades as I learn more code and have time. 
 
 # Link
-
+https://bluebear1701.github.io/My-workday-agenda/
 ## screenshot
+![Screenshot of my website](assets\css\2022-03-12.png)
 
 ## credits 
