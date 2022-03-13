@@ -1,6 +1,6 @@
 // the current date and time
 var today = 
-moment().format('ddd MM/DD/YYYY, hh:mm:ss');
+moment().format('ddd MM/DD/YYYY, hh:mm');
 $("#currentDay").html(today);
 
 //save button click listener
